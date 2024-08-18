@@ -1,0 +1,5 @@
+const square = (num) => num * num;
+
+// Example usage:
+let number = 5;
+console.log(`The square of ${number} is ${square(number)}`);
