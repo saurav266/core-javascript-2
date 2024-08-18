@@ -1,0 +1,34 @@
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+
+// 1. Sort the array and find the min and max age
+ages.sort((a, b) => a - b);
+const minAge = ages[0];
+const maxAge = ages[ages.length - 1];
+
+console.log(`Sorted ages: ${ages}`);
+console.log(`Min age: ${minAge}`);
+console.log(`Max age: ${maxAge}`);
+
+// 2. Find the median age
+const middleIndex = Math.floor(ages.length / 2);
+const medianAge = ages.length % 2 === 0 ? (ages[middleIndex - 1] + ages[middleIndex]) / 2 : ages[middleIndex];
+
+console.log(`Median age: ${medianAge}`);
+
+// 3. Find the average age
+const totalAge = ages.reduce((sum, age) => sum + age, 0);
+const averageAge = totalAge / ages.length;
+
+console.log(`Average age: ${averageAge}`);
+
+// 4. Find the range of the ages
+const ageRange = maxAge - minAge;
+
+console.log(`Age range: ${ageRange}`);
+
+// 5. Compare the value of (min - average) and (max - average), use abs() method
+const minAverageDifference = Math.abs(minAge - averageAge);
+const maxAverageDifference = Math.abs(maxAge - averageAge);
+
+console.log(`Difference between min age and average age: ${minAverageDifference}`);
+console.log(`Difference between max age and average age: ${maxAverageDifference}`);
